@@ -1,0 +1,34 @@
+[package]
+name = "latest_bls"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "latest_bls"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "^0.30.1", features = [
+  "init-if-needed",
+  "allow-missing-optionals",
+] }
+anchor-spl = { version = "^0.30.1" }
+solana-alt-bn128-bls = { git = "https://github.com/Astewart1510/solana-alt-bn128-bls", branch = "master" }
+solana-program = "^1.18"
+solana-bn254 = "2.1.0"
+anyhow = "1.0.44"
+
+[dev-dependencies]
+solana-program-test = "1.18.26"
+solana-sdk = "1.18.26"
+tokio ={ version="1.43.0", features = ["full"] } 
+anyhow = "1.0.44"
